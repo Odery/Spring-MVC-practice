@@ -1,0 +1,6 @@
+#Intellij IDEA config files excluded
+/.idea
+*.iml
+#lib folder with huge Spring framework is excluded
+#so add it by you own
+/lib
