@@ -4,4 +4,4 @@
 *.iml
 #lib folder with huge Spring framework is excluded
 #so add it by you own
-/lib
+/web\WEB-INF\lib
