@@ -1,11 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title>Home</title>
+    <title>You Message</title>
 </head>
 <body>
-<h2>Home Page!</h2>
-<hr/>
-<a href="form">Message Form</a>
+<h2>You message: </h2> ${message}
 </body>
 </html>
