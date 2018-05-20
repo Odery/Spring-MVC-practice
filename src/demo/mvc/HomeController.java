@@ -1,7 +1,6 @@
 package demo.mvc;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
@@ -20,9 +19,9 @@ public class HomeController {
     }
 
     @RequestMapping("/message")
-    public String showSubmit(HttpServletRequest request, Model model) {
+    public String showSubmit(HttpServletRequest request) {
         String msg = request.getParameter("message").toLowerCase();
-        model.addAttribute("message", msg);
+        request.setAttribute("message", msg);
         return "messageSubmitForm";
     }
 }
