@@ -22,7 +22,6 @@ public class HomeController {
 
     @RequestMapping("/submit")
     public String showSubmit(@ModelAttribute("student") Student student) {
-        System.out.println(student);
         return "messageSubmitForm";
     }
 }
