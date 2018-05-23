@@ -12,12 +12,12 @@
     <br/><br/>
     Country:
     <form:select path="country">
-        <form:options items="${student.countries}"/>
+        <form:options items="${data.countries}"/>
     </form:select>
     <br/><br/>
-    Gender: <form:radiobuttons path="gender" items="${student.genders}"/>
+    Gender: <form:radiobuttons path="gender" items="${data.gender}"/>
     <br/><br/>
-    Languages: <form:checkboxes path="lang" items="${student.languages}"/>
+    Languages: <form:checkboxes path="lang" items="${data.language}"/>
     <br/><br/>
     <input type="submit" value="Submit">
 </form:form>
