@@ -4,6 +4,6 @@
     <title>You Message</title>
 </head>
 <body>
-<h2>You message: </h2> ${message}
+Student confirmed: ${student.firstName} ${student.lastName}
 </body>
 </html>

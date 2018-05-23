@@ -1,3 +1,4 @@
+<%--suppress ALL --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
@@ -6,6 +7,6 @@
 <body>
 <h2>Home Page!</h2>
 <hr/>
-<a href="form">Message Form</a>
+<a href="form">Student Form</a>
 </body>
 </html>

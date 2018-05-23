@@ -2,8 +2,8 @@ package demo.mvc;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/home")
@@ -15,13 +15,14 @@ public class HomeController {
     }
 
     @RequestMapping("/form")
-    public String showMessageForm() {
+    public String showMessageForm(Model model) {
+        model.addAttribute("student", new Student());
         return "messageForm";
     }
 
-    @RequestMapping("/message")
-    public String showSubmit(@RequestParam("message") String msg, Model model) {
-        model.addAttribute("message", msg.toUpperCase());
+    @RequestMapping("/submit")
+    public String showSubmit(@ModelAttribute("student") Student student) {
+        System.out.println(student);
         return "messageSubmitForm";
     }
 }
