@@ -25,11 +25,11 @@ public class HomeController {
     public String showMessageForm(Model model) {
         model.addAttribute("student", new Student());
         model.addAttribute("data", data);
-        return "messageForm";
+        return "newStudentForm";
     }
 
     @RequestMapping("/submit")
     public String showSubmit(@ModelAttribute("student") Student student) {
-        return "messageSubmitForm";
+        return "studentConfirm";
     }
 }
