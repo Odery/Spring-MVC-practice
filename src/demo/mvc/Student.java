@@ -2,6 +2,7 @@ package demo.mvc;
 
 import java.util.Arrays;
 
+//POJO
 public class Student {
     private String firstName;
     private String lastName;
