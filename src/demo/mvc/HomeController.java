@@ -3,8 +3,11 @@ package demo.mvc;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/home")
@@ -16,6 +19,11 @@ public class HomeController {
         this.data = data;
     }
 
+    @ModelAttribute("data")
+    public DataBean addData() {
+        return data;
+    }
+
     @RequestMapping("/")
     public String showHomePage() {
         return "home-page";
@@ -24,12 +32,15 @@ public class HomeController {
     @RequestMapping("/form")
     public String showMessageForm(Model model) {
         model.addAttribute("student", new Student());
-        model.addAttribute("data", data);
         return "newStudentForm";
     }
 
     @RequestMapping("/submit")
-    public String showSubmit(@ModelAttribute("student") Student student) {
-        return "studentConfirm";
+    public String showSubmit(@Valid @ModelAttribute("student") Student student, BindingResult bindingResult, Model model) {
+        if (bindingResult.hasErrors()) {
+            return "newStudentForm";
+        } else {
+            return "studentConfirm";
+        }
     }
 }

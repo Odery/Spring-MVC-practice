@@ -7,16 +7,19 @@
 <body>
 
 <form:form action="submit" modelAttribute="student">
-    First Name: <form:input path="firstName"/>
+    First Name<span style="color: red">*</span>: <form:input path="firstName"/>
+    <form:errors path="firstName" cssStyle="color: red"/>
     <br/><br/>
 
-    Last Name: <form:input path="lastName"/>
+    Last Name<span style="color: red">*</span>: <form:input path="lastName"/>
+    <form:errors path="lastName" cssStyle="color: red"/>
     <br/><br/>
 
     Country:
     <form:select path="country">
         <form:options items="${data.countries}"/>
     </form:select>
+    <form:errors path="country" cssStyle="color: red"/>
     <br/><br/>
 
     Gender: <form:radiobuttons path="gender" items="${data.gender}"/>

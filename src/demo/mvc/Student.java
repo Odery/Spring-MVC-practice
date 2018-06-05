@@ -1,11 +1,17 @@
 package demo.mvc;
 
+import javax.validation.constraints.Size;
 import java.util.Arrays;
 
 //POJO
 public class Student {
+
+    @Size(min = 3, message = "too short")
     private String firstName;
+
+    @Size(min = 3, message = "too short")
     private String lastName;
+
     private String country;
     private String gender;
     private String[] lang;
