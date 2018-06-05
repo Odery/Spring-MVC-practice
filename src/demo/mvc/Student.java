@@ -1,14 +1,17 @@
 package demo.mvc;
 
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Arrays;
 
 //POJO
 public class Student {
 
+    @NotNull(message = "Name is required")
     @Size(min = 3, message = "too short")
     private String firstName;
 
+    @NotNull(message = "Last name is required")
     @Size(min = 3, message = "too short")
     private String lastName;
 
