@@ -22,8 +22,14 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <!-- Properties for DataBean -->
     <util:properties id="props" location="WEB-INF/props.properties"/>
     <util:properties id="countries" location="WEB-INF/country.properties"/>
+
+    <!-- Default messages -->
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basenames" value="resources.messages"/>
+    </bean>
 </beans>
 
 
