@@ -15,6 +15,10 @@
     <form:errors path="lastName" cssStyle="color: red"/>
     <br/><br/>
 
+    Number<span style="color: red">*</span>: <form:input path="num"/>
+    <form:errors path="num" cssStyle="color: red"/>
+    <br/><br/>
+
     Country:
     <form:select path="country">
         <form:options items="${data.countries}"/>
