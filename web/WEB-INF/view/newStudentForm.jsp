@@ -15,8 +15,8 @@
     <form:errors path="lastName" cssStyle="color: red"/>
     <br/><br/>
 
-    Number<span style="color: red">*</span>: <form:input path="num"/>
-    <form:errors path="num" cssStyle="color: red"/>
+    Code: <form:input path="code"/>
+    <form:errors path="code" cssStyle="color: red"/>
     <br/><br/>
 
     Email<span style="color: red">*</span>: <form:input path="email"/>

@@ -1,6 +1,8 @@
 package demo.mvc;
 
-import javax.validation.constraints.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.util.Arrays;
 
 //POJO
@@ -14,9 +16,8 @@ public class Student {
     @Size(min = 3, message = "too short")
     private String lastName;
 
-    @Min(value = 0, message = "too short")
-    @Max(value = 255, message = "too long")
-    private Integer num;
+    @CodeCheck(codePrefix = "Link")
+    private String code;
 
     @NotNull(message = "email is required")
     @Pattern(regexp = "\\w+@\\w+[.][a-z]{2,3}$", message = "wrong email!")
@@ -39,12 +40,12 @@ public class Student {
         this.email = email;
     }
 
-    public Integer getNum() {
-        return num;
+    public String getCode() {
+        return code;
     }
 
-    public void setNum(Integer num) {
-        this.num = num;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public String getFirstName() {
